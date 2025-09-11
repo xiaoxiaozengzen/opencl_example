@@ -32,9 +32,9 @@ target_link_libraries(
   OpenCL::UtilsCpp
 )
 
-add_executable(opencl_reduce src/reduce.cpp)
+add_executable(opencl_add src/add.cpp)
 target_link_libraries(
-  opencl_reduce PUBLIC 
+  opencl_add PUBLIC 
   OpenCL::Headers
   OpenCL::OpenCL
   OpenCL::HeadersCpp
@@ -42,6 +42,6 @@ target_link_libraries(
   OpenCL::UtilsCpp
   tclap::tclap
 )
-target_include_directories(opencl_reduce PUBLIC ${tclap_INCLUDE_DIRS})
+target_include_directories(opencl_add PUBLIC ${tclap_INCLUDE_DIRS})
 
 add_subdirectory(tclap)
