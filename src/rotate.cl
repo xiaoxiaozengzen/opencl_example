@@ -1,11 +1,9 @@
-#pragma OPENCL EXTENSION cl_amd_printf : enable
-__kernel  void image_rotate(
-      __global uchar * src_data,
-      __global uchar * dest_data,        //Data in global memory
-      int W,    int H,                   //Image Dimensions
-      float sinTheta, float cosTheta )   //Rotation Parameters
+// pragma OPENCL EXTENSION cl_amd_printf : enable
+kernel void image_rotate(
+      global int * src_data,
+      global int * dest_data, int W, int H, float sinTheta, float cosTheta )
 {
-   # get_global_id 用于获取当前线程的全局坐标，决定每个线程处理的数据块。
+   // get_global_id 用于获取当前线程的全局坐标，决定每个线程处理的数据块。
    const int ix = get_global_id(0);
    const int iy = get_global_id(1);
    int xc = W/2;

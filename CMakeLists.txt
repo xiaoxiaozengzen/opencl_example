@@ -32,9 +32,9 @@ target_link_libraries(
   OpenCL::UtilsCpp
 )
 
-add_executable(opencl_add src/add.cpp)
+add_executable(opencl_rotate src/rotate.cpp)
 target_link_libraries(
-  opencl_add PUBLIC 
+  opencl_rotate PUBLIC 
   OpenCL::Headers
   OpenCL::OpenCL
   OpenCL::HeadersCpp
@@ -42,6 +42,6 @@ target_link_libraries(
   OpenCL::UtilsCpp
   tclap::tclap
 )
-target_include_directories(opencl_add PUBLIC ${tclap_INCLUDE_DIRS})
+target_include_directories(opencl_rotate PUBLIC ${tclap_INCLUDE_DIRS})
 
 add_subdirectory(tclap)
